@@ -34,6 +34,7 @@ export default function RootLayout({
             g.async=true; g.src=u+'matomo.js'; s.parentNode.insertBefore(g,s);
           })();
         `}</Script>
+        <Script src="https://matomo.np-vipanan.sahaj.ai//plugins/FormAnalytics/tracker.min.js" strategy="afterInteractive" />
         <Script id="matomo-input-tracker" strategy="afterInteractive">{`
 (function(){
   // ---- config ----
