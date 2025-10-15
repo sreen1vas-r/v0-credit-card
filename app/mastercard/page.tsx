@@ -11,7 +11,7 @@ export default function MastercardPage() {
           Back to cards
         </Link>
       </header>
-      <CreditLimitForm card="mastercard" />
+      <CreditLimitForm card="mastercard" formName="mastercard-form" formId="mastercard-form" />
       <FeedbackBox context="mastercard" />
     </main>
   )

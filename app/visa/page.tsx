@@ -11,7 +11,7 @@ export default function VisaPage() {
           Back to cards
         </Link>
       </header>
-      <CreditLimitForm card="visa" />
+      <CreditLimitForm card="visa" formName="visa-form" formId="visa-form" />
       <FeedbackBox context="visa" />
     </main>
   )

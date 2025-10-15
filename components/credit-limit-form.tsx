@@ -12,11 +12,13 @@ type CardType = "visa" | "mastercard" | "amex"
 
 interface CreditLimitFormProps {
   card: CardType
+  formName?: string
+  formId?: string
 }
 
 type Decision = { approved: true; approvedLimit: number; message: string } | { approved: false; message: string }
 
-export function CreditLimitForm({ card }: CreditLimitFormProps) {
+export function CreditLimitForm({ card, formName, formId }: CreditLimitFormProps) {
   const [fullName, setFullName] = useState("")
   const [accountNumber, setAccountNumber] = useState("")
   const [currentLimit, setCurrentLimit] = useState<number | "">("")
@@ -107,6 +109,8 @@ export function CreditLimitForm({ card }: CreditLimitFormProps) {
   }
 
   const cardLabel = card === "visa" ? "Visa" : card === "mastercard" ? "Mastercard" : "American Express"
+  const resolvedFormName = formName ?? `${card}-form`
+  const resolvedFormId = formId ?? resolvedFormName
 
   return (
     <Card className="border">
@@ -117,7 +121,7 @@ export function CreditLimitForm({ card }: CreditLimitFormProps) {
         </CardDescription>
       </CardHeader>
       <CardContent>
-        <form onSubmit={onSubmit} className="grid gap-4" noValidate>
+        <form id={resolvedFormId} name={resolvedFormName} onSubmit={onSubmit} className="grid gap-4" noValidate>
           <div className="grid gap-2">
             <Label htmlFor="fullName">Full name</Label>
             <Input

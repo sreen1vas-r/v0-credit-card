@@ -11,7 +11,7 @@ export default function AmexPage() {
           Back to cards
         </Link>
       </header>
-      <CreditLimitForm card="amex" />
+      <CreditLimitForm card="amex" formName="amex-form" formId="amex-form" />
       <FeedbackBox context="amex" />
     </main>
   )
